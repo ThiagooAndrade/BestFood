@@ -1,0 +1,35 @@
+
+#carrinho-container {
+    width: 100%;
+    max-width: 393px;
+}
+
+
+
+#carrinho-container table thead tr th:first-child {
+    border-top-left-radius: 0.25rem;
+    width: 50%;
+}
+
+#carrinho-container table thead tr th:last-child {
+    border-top-right-radius: 0.25rem;
+}
+
+
+
+#carrinho-finalizar-pedido {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+#carrinho-finalizar-pedido p {
+    align-self: flex-end;
+}
+
+
+#carrinho-finalizar-pedido button {
+    align-self: center;
+}

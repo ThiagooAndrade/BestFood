@@ -1,0 +1,11 @@
+@import url("../../global.css");
+
+main {
+    width: 75%;
+    /* text-align: center; */
+    margin: auto;
+}
+
+main h1 {
+    text-align: center;
+}

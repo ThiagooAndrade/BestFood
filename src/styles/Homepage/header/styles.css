@@ -8,7 +8,7 @@
 }
 
 /* para o navbar nao empurrar os outros componentes */
-.navbar {
+.navbar-header {
     background-color: var(--header-back-bg) !important;
     position: fixed;
     width: 100%;

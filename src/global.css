@@ -23,8 +23,6 @@ body {
     background: url(../src/assets/piso.jpg);
 }
 
-
-
 button {
     cursor: pointer;
 }
@@ -34,6 +32,19 @@ a {
     text-decoration: none;
 }
 
+
+.w-45 {
+    width: 45%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-35 {
+    width: 35%;
+}
+ 
 @media (max-width: 1080px) {
     html {
         font-size: 93.75%;

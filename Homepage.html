@@ -141,10 +141,8 @@
                 </div>
             </div>
 
-            
+           
 
-
-       
             <!-- carrinho -->
             <div class="carrinho-container-desktop">
                 <table class="table">
@@ -166,51 +164,50 @@
             </div>
         </section>
 
+        
 
-        <div id="showCarrinho-mobile" class="navbar bg-body-tertiary fixed-bottom">
+        <!-- carrinho -->
+        <!-- <div id="showCarrinho-mobile" class="navbar bg-body-tertiary fixed-bottom">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Offcanvas navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <a class="navbar-brand" href="#">Offcanvas navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                          <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <form class="d-flex mt-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-                </div>
-              </div>
             </div>
-          </div>
-
-       
-
+        </div> -->
 
     </main>
     <!-- Button trigger modal
@@ -218,42 +215,47 @@
         Launch demo modal
     </button> -->
 
+    <button type="button" class="btn btn-primary showCarrinho-modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Ver carrinho
+    </button>
+
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div id="carrinho-container">
+                <div class="carrinho-container-mobile">
                     <table class="table">
                         <thead>
                           <tr>
-                            <th scope="col" class="w-50">Item</th>
-                            <th scope="col" >Valor</th>
-                            <th scope="col" class="w-25">Quantidade</th>
+                            <th scope="col" class="w-45">Item</th>
+                            <th scope="col" class="w-20">Valor</th>
+                            <th scope="col" class="w-100">Quantidade</th>
                           </tr>
                         </thead>
-                        <tbody id="carrinho-body">
+                        <tbody class="carrinho-body-mobile">
        
                         </tbody>
                     </table>
-                    <div id="carrinho-finalizar-pedido">
-                        <p>R$<span id="carrinho-valor-total">0.0</span></p>
-                        <button class="btn btn-primary" id="carrinho-finalizar-pedido-button">Finalizar</button>
-                      </div>
-                     
+                   
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+                 <div class="carrinho-finalizar-pedido-mobile">
+                    <p>R$<span class="carrinho-valor-total-mobile">0.00</span></p>
+                    <button class="btn btn-primary carrinho-finalizar-pedido-button-mobile" data-bs-dismiss="modal">Finalizar</button>
+                </div> 
             </div>
-          </div>
         </div>
-      </div>
+        </div>
+    </div>
+
+
+   
 
     <!-- <div class="modal fade" id="pizzaModal" tabindex="-1" aria-labelledby="pizzaModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -377,8 +379,6 @@
             })();
         </script>
     </div>
-
-
 
     <footer id="footer">
         <div id="footer-container">

@@ -1,15 +1,30 @@
 const carrinhoBodyDesktop = document.querySelector(".carrinho-body-desktop");
+const carrinhoBodyMobile = document.querySelector(".carrinho-body-mobile")
 const valueTotalDesktop = document.querySelector(".carrinho-valor-total-desktop");
+const valueTotalMobile = document.querySelector(".carrinho-valor-total-mobile");
 const moeda = "R$";
 
 
 let cartState = []
 
 const finalizarPedidoDesktop = document.querySelector(".carrinho-finalizar-pedido-button-desktop");
+const finalizarPedidoMobile = document.querySelector(".carrinho-finalizar-pedido-button-mobile");
 finalizarPedidoDesktop.addEventListener("click", () => {
     // carrinhoBody.outerHTML = "<tbody id='carrinho-body'></tbody>";
     carrinhoBodyDesktop.innerHTML = "";
+    carrinhoBodyMobile.innerHTML = "";
     valueTotalDesktop.textContent = "0.00";
+    valueTotalMobile.textContent = "0.00";
+    // console.log(carrinhoBody.outerHTML);
+    cartState = [];
+})
+
+finalizarPedidoMobile.addEventListener("click", () => {
+    // carrinhoBody.outerHTML = "<tbody id='carrinho-body'></tbody>";
+    carrinhoBodyDesktop.innerHTML = "";
+    carrinhoBodyMobile.innerHTML = "";
+    valueTotalDesktop.textContent = "0.00";
+    valueTotalMobile.textContent = "0.00";
     // console.log(carrinhoBody.outerHTML);
     cartState = [];
 })

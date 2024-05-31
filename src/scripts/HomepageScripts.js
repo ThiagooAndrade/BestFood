@@ -1,42 +1,28 @@
-const carrinhoBodyDesktop = document.querySelector(".carrinho-body-desktop");
-const carrinhoBodyMobile = document.querySelector(".carrinho-body-mobile")
-const valueTotalDesktop = document.querySelector(".carrinho-valor-total-desktop");
-const valueTotalMobile = document.querySelector(".carrinho-valor-total-mobile");
+const carrinhoBody = document.querySelector(".carrinho-body");
+const valueTotal = document.querySelector(".carrinho-valor-total");
 const moeda = "R$";
 
+let cartState = [];
 
-let cartState = []
+const finalizarPedido = document.querySelector(
+    ".carrinho-finalizar-pedido-button"
+);
 
-const finalizarPedidoDesktop = document.querySelector(".carrinho-finalizar-pedido-button-desktop");
-const finalizarPedidoMobile = document.querySelector(".carrinho-finalizar-pedido-button-mobile");
-finalizarPedidoDesktop.addEventListener("click", () => {
-    // carrinhoBody.outerHTML = "<tbody id='carrinho-body'></tbody>";
-    carrinhoBodyDesktop.innerHTML = "";
-    carrinhoBodyMobile.innerHTML = "";
-    valueTotalDesktop.textContent = "0.00";
-    valueTotalMobile.textContent = "0.00";
-    // console.log(carrinhoBody.outerHTML);
+finalizarPedido.addEventListener("click", () => {
+    carrinhoBody.innerHTML = "";
+    valueTotal.textContent = "0.00";
     cartState = [];
-})
-
-finalizarPedidoMobile.addEventListener("click", () => {
-    // carrinhoBody.outerHTML = "<tbody id='carrinho-body'></tbody>";
-    carrinhoBodyDesktop.innerHTML = "";
-    carrinhoBodyMobile.innerHTML = "";
-    valueTotalDesktop.textContent = "0.00";
-    valueTotalMobile.textContent = "0.00";
-    // console.log(carrinhoBody.outerHTML);
-    cartState = [];
-})
-
+});
 
 function addToCart(obj) {
     if (verificaSeEstaNoCarrinho(obj)) {
-        let quantityText = document.querySelector(`.quantityText${obj.id}`)
-        console.log(obj.id)
-        console.log(quantityText)
+        let quantityText = document.querySelector(`.quantityText${obj.id}`);
+
         quantityText.textContent = Number(quantityText.textContent) + 1;
-        valueTotalDesktop.textContent = (parseFloat(valueTotalDesktop.textContent) + parseFloat(obj.value)).toFixed(2);
+
+        valueTotal.textContent = (
+            parseFloat(valueTotal.textContent) + parseFloat(obj.value)
+        ).toFixed(2);
     } else {
         const tr = document.createElement("tr");
         const aboutItem = document.createElement("td");
@@ -48,18 +34,17 @@ function addToCart(obj) {
         const textQuantityContainer = document.createElement("div");
         const textQuantity = document.createElement("p");
 
-    
-        if (valueTotalDesktop.textContent == "0.00") {
-            valueTotalDesktop.textContent = parseFloat(obj.value).toFixed(2);
+        if (valueTotal.textContent == "0.00") {
+            valueTotal.textContent = parseFloat(obj.value).toFixed(2);
         } else {
-            valueTotalDesktop.textContent = (parseFloat(valueTotalDesktop.textContent) + parseFloat(obj.value)).toFixed(2);
+            valueTotal.textContent = (
+                parseFloat(valueTotal.textContent) + parseFloat(obj.value)
+            ).toFixed(2);
         }
-    
+
         tr.id = obj.id + "tr";
-    
+
         textQuantity.classList.add(`quantityText${obj.id}`);
-    
-        console.log(textQuantity)
 
         nameItem.textContent = obj.item.name;
         nameItem.style.fontWeight = "bold";
@@ -69,44 +54,48 @@ function addToCart(obj) {
         img.width = 75;
         img.height = 50;
         img.style.borderRadius = "0.25rem";
-    
-        buttonRemoveOne.classList.add("btn", "btn-primary")
-    
-        buttonRemoveOne.textContent = "Remover um" 
-        
-        textQuantityContainer.appendChild(textQuantity)
+
+        buttonRemoveOne.classList.add("btn", "btn-primary");
+
+        buttonRemoveOne.textContent = "Remover um";
+
+        textQuantityContainer.appendChild(textQuantity);
 
         aboutItem.appendChild(nameItem);
         aboutItem.appendChild(img);
-    
+
         textQuantity.textContent = 1;
-    
-        quantity.appendChild(textQuantity)
-        quantity.appendChild(buttonRemoveOne)
-    
+
+        quantity.appendChild(textQuantity);
+        quantity.appendChild(buttonRemoveOne);
+
+        value.textContent = obj.value;
+
         buttonRemoveOne.addEventListener("click", () => {
-            valueTotalDesktop.textContent = (parseFloat(valueTotalDesktop.textContent) - parseFloat(obj.value)).toFixed(2);
+            valueTotal.textContent = (
+                parseFloat(valueTotal.textContent) - parseFloat(obj.value)
+            ).toFixed(2);
+
             if (Number(textQuantity.textContent) > 1) {
-                textQuantity.textContent = Number(textQuantity.textContent) -1;
-               
+                textQuantity.textContent = Number(textQuantity.textContent) - 1;
             } else {
                 tr.outerHTML = "";
-                cartState.forEach(item => {
-                    if (item.id = obj.id) {
+                cartState.forEach((item) => {
+                    if ((item.id = obj.id)) {
                         cartState.pop(item);
                     }
-                })
+                });
             }
-        })
-        value.textContent = obj.value;
+        });
+
         tr.appendChild(aboutItem);
         tr.appendChild(value);
         tr.appendChild(quantity);
-        carrinhoBodyDesktop.appendChild(tr);
+
+        carrinhoBody.appendChild(tr);
+
         cartState.push(obj);
-
     }
-
 }
 
 // Chamando a função para criar o modal de pizza
@@ -118,13 +107,11 @@ addHotdogOnListProduct();
 addBebidasOnListProduct();
 addAcompanhamentosOnListProduct();
 
-
-
 function verificaSeEstaNoCarrinho(obj) {
     for (let i = 0; i < cartState.length; i++) {
         if (cartState[i].id === obj.id) {
-            return true;   
-        }                
+            return true;
+        }
     }
     return false;
 }

@@ -21,6 +21,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background: url(../src/assets/piso.jpg);
+    font-family: "Sevillana variant0", Tofu;
 }
 
 button {
@@ -44,6 +45,8 @@ a {
 .w-35 {
     width: 35%;
 }
+
+
  
 @media (max-width: 1080px) {
     html {
@@ -58,3 +61,8 @@ a {
         /* 14px */
     }
 }
+
+/* @font-face {
+    font-family: myFont;
+    src: url(../src/assets/VictorianBritania.ttf);
+} */

@@ -2,10 +2,10 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BestFood</title>
-    <link rel="stylesheet" href="./src/styles/Homepage/Homepage.css">
+    <link rel="stylesheet" href="./src/styles/Homepage/Homepage.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -35,32 +35,24 @@
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li>
-                                    <hr class="dropdown-divider">
+                                    <a class="dropdown-item" href="#">Action</a>
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
-        
                     </ul>
-
                 </div>
             </div>
-            <form id="header-search-in-nav" class="d-flex justify-content-center" role="search">
-                <input class="form-control me-2 header-search" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
         </nav>
-        <!-- <form id="header-search-off-nav" class="d-flex" role="search">
-            <input class="form-control me-2 header-search" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
-
     </header>
 
     <main>
@@ -72,21 +64,38 @@
                         Veja nosso cardápio abaixo.
                     </h1>
                     <div class="d-flex justify-content-between p-2">
-                        <input type="text" placeholder="Busque por um produto">
+                        <input type="text" placeholder="Busque por um produto" />
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Filtrar cardápio
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Filtrar cardápio</a></li>
-                                <li><a class="dropdown-item" href="#">Todos</a></li>
-                                <li><a class="dropdown-item" href="#">Pizzas</a></li>
-                                <li><a class="dropdown-item" href="#">Hamburgers</a></li>
-                                <li><a class="dropdown-item" href="#">Bebidas</a></li>
-                                <li><a class="dropdown-item" href="#">Sobremesas</a></li>
-                                <li><a class="dropdown-item" href="#">Acompanhamentos</a></li>
-                                <li><a class="dropdown-item" href="#">Saladas</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Filtrar cardápio</a>
+                                </li>
+                                <li>
+                                    <a id="filter-all" class="dropdown-item" href="#">Todos</a>
+                                </li>
+                                <li>
+                                    <a id="filter-only-pizza" class="dropdown-item" href="#">Pizzas</a>
+                                </li>
+                                <li>
+                                    <a id="filter-only-hamburgers" class="dropdown-item" href="#">Hamburgers</a>
+                                </li>
+                                <li>
+                                    <a id="filter-only-bebidas" class="dropdown-item" href="#">Bebidas</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Sobremesas</a>
+                                </li>
+                                <li>
+                                    <a id="filter-only-acompanhamentos" class="dropdown-item"
+                                        href="#">Acompanhamentos</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Saladas</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -94,7 +103,6 @@
 
                 <!-- menu -->
                 <div id="list-product" class="p-2 mb-4">
-
                     <!-- pizza -->
                     <div class="mt-4 mb-4">
                         <h1 class="text-center">PIZZAS</h1>
@@ -108,7 +116,9 @@
                                 </div>
                                 <div class="btn-product-container">
                                     <button class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#pizzasPequenaModal">Veja mais</button>
+                                        data-bs-target="#pizzasPequenaModal">
+                                        Veja mais
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -120,10 +130,11 @@
                                 </div>
                                 <div class="btn-product-container">
                                     <button class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#pizzasMediaModal">Veja mais</button>
+                                        data-bs-target="#pizzasMediaModal">
+                                        Veja mais
+                                    </button>
                                 </div>
                             </div>
-
                         </div>
                         <div class="product-box">
                             <div class="product-box-content w-100">
@@ -133,248 +144,95 @@
                                 </div>
                                 <div class="btn-product-container">
                                     <button class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#pizzasGrandeModal">Veja mais</button>
+                                        data-bs-target="#pizzasGrandeModal">
+                                        Veja mais
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-           
-
-            <!-- carrinho -->
-            <div class="carrinho-container-desktop">
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col" class="w-45">Item</th>
-                        <th scope="col" class="w-20">Valor</th>
-                        <th scope="col" class="w-35">Quantidade</th>
-                      </tr>
-                    </thead>
-                    <tbody class="carrinho-body-desktop">
-   
-                    </tbody>
-                </table>
-                <div class="carrinho-finalizar-pedido-desktop">
-                    <p>R$<span class="carrinho-valor-total-desktop">0.00</span></p>
-                    <button class="btn btn-primary carrinho-finalizar-pedido-button-desktop">Finalizar</button>
-                </div> 
-            </div>
         </section>
-
-        
-
-        <!-- carrinho -->
-        <!-- <div id="showCarrinho-mobile" class="navbar bg-body-tertiary fixed-bottom">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Offcanvas navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="d-flex mt-3" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
     </main>
-    <!-- Button trigger modal
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button> -->
 
-    <button type="button" class="btn btn-primary showCarrinho-modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button type="button" class="btn btn-primary showCarrinho-modal" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
         Ver carrinho
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="carrinho-container-mobile">
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col" class="w-45">Item</th>
-                            <th scope="col" class="w-20">Valor</th>
-                            <th scope="col" class="w-100">Quantidade</th>
-                          </tr>
-                        </thead>
-                        <tbody class="carrinho-body-mobile">
-       
-                        </tbody>
-                    </table>
-                   
-                </div>
-            </div>
-            <div class="modal-footer">
-                 <div class="carrinho-finalizar-pedido-mobile">
-                    <p>R$<span class="carrinho-valor-total-mobile">0.00</span></p>
-                    <button class="btn btn-primary carrinho-finalizar-pedido-button-mobile" data-bs-dismiss="modal">Finalizar</button>
-                </div> 
-            </div>
-        </div>
-        </div>
-    </div>
-
-
-   
-
-    <!-- <div class="modal fade" id="pizzaModal" tabindex="-1" aria-labelledby="pizzaModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="pizzaModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                        Modal title
+                    </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body bg-info-subtle">
-                    <div class="row d-flex g-2">
-                        <div class="product-box">
-                            <div class="product-box-img">
-                                <img src="./src/assets/pizzamussarela.jpg" alt="pizza mussarela">
-                            </div>
-                            <div class="product-box-content">
-                                <div class="text-product-container">
-                                    <h2>Mussarela</h2>
-                                    <p>R$34,00</p>
-                                </div>
-                                <div class="btn-product-container">
-                                    <button class="btn btn-primary">Adicionar ao carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-box-img">
-                                <img src="./src/assets/pizzamussarela.jpg" alt="pizza calabresa">
-                            </div>
-                            <div class="product-box-content">
-                                <div class="text-product-container">
-                                    <h2>Calabresa</h2>
-                                    <p>R$34,00</p>
-                                </div>
-                                <div class="btn-product-container">
-                                    <button class="btn btn-primary">Adicionar ao carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-box-img">
-                                <img src="./src/assets/pizzamussarela.jpg" alt="frango catupiry">
-                            </div>
-                            <div class="product-box-content">
-                                <div class="text-product-container">
-                                    <h2>Frango catupiry</h2>
-                                    <p>R$34,00</p>
-                                </div>
-                                <div class="btn-product-container">
-                                    <button class="btn btn-primary">Adicionar ao carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-box-img">
-                                <img src="./src/assets/pizzamussarela.jpg" alt="Três queijos">
-                            </div>
-                            <div class="product-box-content">
-                                <div class="text-product-container">
-                                    <h2>Três queijos</h2>
-                                    <p>R$34,00</p>
-                                </div>
-                                <div class="btn-product-container">
-                                    <button class="btn btn-primary">Adicionar ao carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-box-img">
-                                <img src="./src/assets/pizzamussarela.jpg" alt="Portuguesa">
-                            </div>
-                            <div class="product-box-content">
-                                <div class="text-product-container">
-                                    <h2>Portuguesa</h2>
-                                    <p>R$34,00</p>
-                                </div>
-                                <div class="btn-product-container">
-                                    <button class="btn btn-primary">Adicionar ao carrinho</button>
-                                </div>
-                            </div>
-                        </div>
+                <div id="carrinho-body-modal" class="modal-body">
+                    <div class="carrinho-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="w-45">Item</th>
+                                    <th scope="col" class="w-20">Valor</th>
+                                    <th scope="col" class="w-100">
+                                        Quantidade
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="carrinho-body"></tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <label>Valor total =</label>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <div class="carrinho-finalizar-pedido">
+                        <p>
+                            R$<span class="carrinho-valor-total">0.00</span>
+                        </p>
+                        <button class="btn btn-primary carrinho-finalizar-pedido-button" data-bs-dismiss="modal">
+                            Finalizar
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <div id=" wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+    <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
         <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3" class="responsive-map"></div>
         <script>
             (function () {
                 var setting = {
-                    "query": "Centro Universitário Estácio do Recife - Av. Eng. Abdias de Carvalho - Madalena, Recife - PE, Brasil",
-                    "width": "100%", // Ajustado para 100% para responsividade
-                    "height": 400, // Altura ajustável conforme necessidade
-                    "satellite": false,
-                    "zoom": 16,
-                    "placeId": "ChIJp9CpXyUZqwcRQeK4soaIKKI",
-                    "cid": "0xa2288886b2b8e241",
-                    "coords": [-8.062037, -34.91611619999999],
-                    "cityUrl": "/brazil/recife-18511",
-                    "cityAnchorText": "Mapa de Recife, Pernambuco, Brasil",
-                    "lang": "pt",
-                    "queryString": "Centro Universitário Estácio do Recife - Av. Eng. Abdias de Carvalho - Madalena, Recife - PE, Brasil",
-                    "centerCoord": [-8.062037, -34.91611619999999],
-                    "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3",
-                    "embed_id": "1109919"
+                    query: "Centro Universitário Estácio do Recife - Av. Eng. Abdias de Carvalho - Madalena, Recife - PE, Brasil",
+                    width: "100%", // Ajustado para 100% para responsividade
+                    height: 400, // Altura ajustável conforme necessidade
+                    satellite: false,
+                    zoom: 16,
+                    placeId: "ChIJp9CpXyUZqwcRQeK4soaIKKI",
+                    cid: "0xa2288886b2b8e241",
+                    coords: [-8.062037, -34.91611619999999],
+                    cityUrl: "/brazil/recife-18511",
+                    cityAnchorText: "Mapa de Recife, Pernambuco, Brasil",
+                    lang: "pt",
+                    queryString:
+                        "Centro Universitário Estácio do Recife - Av. Eng. Abdias de Carvalho - Madalena, Recife - PE, Brasil",
+                    centerCoord: [-8.062037, -34.91611619999999],
+                    id: "map-9cd199b9cc5410cd3b1ad21cab2e54d3",
+                    embed_id: "1109919",
                 };
                 var d = document;
-                var s = d.createElement('script');
-                s.src = 'https://1map.com/js/script-for-user.js?embed_id=1109919';
+                var s = d.createElement("script");
+                s.src =
+                    "https://1map.com/js/script-for-user.js?embed_id=1109919";
                 s.async = true;
                 s.onload = function (e) {
-                    window.OneMap.initMap(setting)
+                    window.OneMap.initMap(setting);
                 };
-                var to = d.getElementsByTagName('script')[0];
+                var to = d.getElementsByTagName("script")[0];
                 to.parentNode.insertBefore(s, to);
             })();
         </script>
@@ -420,13 +278,15 @@
                 <div id="footer-stay-informed-container" class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Stay Informed</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="email address...">
-                    <button id="stay-informed-button" class="btn btn-danger">Sign UP</button>
+                        placeholder="email address..." />
+                    <button id="stay-informed-button" class="btn btn-danger">
+                        Sign UP
+                    </button>
                 </div>
             </div>
         </div>
     </footer>
-    
+
     <script src="./src/scripts/products/hamburgers.js"></script>
     <script src="./src/scripts/products/pizzas.js"></script>
     <script src="./src/scripts/products/bebidas.js"></script>

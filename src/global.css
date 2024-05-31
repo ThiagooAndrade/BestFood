@@ -33,7 +33,6 @@ a {
     text-decoration: none;
 }
 
-
 .w-45 {
     width: 45%;
 }
@@ -46,8 +45,6 @@ a {
     width: 35%;
 }
 
-
- 
 @media (max-width: 1080px) {
     html {
         font-size: 93.75%;

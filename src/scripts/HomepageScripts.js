@@ -2,6 +2,7 @@ const carrinhoBody = $(".carrinho-body");
 const valueTotal = $(".carrinho-valor-total");
 const moeda = "R$";
 let cartState = [];
+const cartLengthText = $("#carrinho-quantity-text");
 
 const finalizarPedido = $(".carrinho-finalizar-pedido-button");
 
@@ -9,18 +10,28 @@ finalizarPedido.on("click", function () {
     carrinhoBody.empty();
     valueTotal.text("0.00");
     cartState = [];
+    cartLengthText.text(" ")
 });
+
 
 function addToCart(obj) {
     if (verificaSeEstaNoCarrinho(obj)) {
         let quantityText = $(`.quantityText${obj.id}`);
 
         quantityText.text(parseInt(quantityText.text()) + 1);
-
+        cartLengthText.text(parseInt(cartLengthText.text()) + 1)
         valueTotal.text(
             (parseFloat(valueTotal.text()) + parseFloat(obj.value)).toFixed(2)
         );
+
     } else {
+        if (cartLengthText.text() == " ") {
+            cartLengthText.text(1)
+        } else {
+            cartLengthText.text(Number(cartLengthText.text()) + 1)
+        }
+        console.log("inicial" + cartLengthText.text())
+
         const tr = $("<tr>");
         const aboutItem = $("<td>");
         const img = $("<img>");
@@ -62,9 +73,16 @@ function addToCart(obj) {
                 let currentQuantity = parseInt(textQuantity.text());
                 if (currentQuantity > 1) {
                     textQuantity.text(currentQuantity - 1);
+                    cartLengthText.text(Number(cartLengthText.text()) - 1)
                 } else {
                     tr.remove();
                     cartState = cartState.filter(item => item.id !== obj.id);
+                    if (cartLengthText.text() == "1") {
+                        cartLengthText.text(" ");
+                    } else {
+                        cartLengthText.text(Number(cartLengthText.text()) - 1)
+                    }
+
                 }
             });
 
@@ -83,6 +101,7 @@ function addToCart(obj) {
         carrinhoBody.append(tr);
 
         cartState.push(obj);
+
     }
 }
 

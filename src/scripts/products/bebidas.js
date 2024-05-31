@@ -3,100 +3,86 @@ let bebidas = [
         id: 24,
         name: "Coca cola",
         price: "15.90",
-        imgURL: "./src/assets/cocacola.jpg" 
+        imgURL: "./src/assets/cocacola.jpg"
     },
     {
         id: 25,
         name: "Água",
         price: "15.90",
-        imgURL: "./src/assets/agua.jpg" 
+        imgURL: "./src/assets/agua.jpg"
     },
     {
         id: 26,
         name: "Fanta laranja",
         price: "15.90",
-        imgURL: "./src/assets/fantalaranja.jpg" 
+        imgURL: "./src/assets/fantalaranja.jpg"
     },
     {
         id: 27,
         name: "Sprite",
         price: "15.90",
-        imgURL: "./src/assets/sprite.jpg" 
+        imgURL: "./src/assets/sprite.jpg"
     }
 ]
 
 
 function addBebidasOnListProduct() {
-    let text_div = document.createElement("div");
-    text_div.classList.add("mt-4");
-    text_div.classList.add("mb-4");
-    let text = document.createElement("h1");
-    text.classList.add("text-center");
-    text.textContent = "BEBIDAS";
-    text_div.appendChild(text);
+    // Criando o elemento div para o texto
+    let text_div = $("<div>").addClass("mt-4 mb-4");
+    let text = $("<h1>").addClass("text-center").text("BEBIDAS");
+    text_div.append(text);
 
+    // Adicionando o texto ao elemento com id "list-product"
+    $("#list-product").append(text_div);
 
-    let listProduct = document.getElementById("list-product");
-    listProduct.appendChild(text_div);
-    let productCardapioContainer = document.createElement("div");
-    productCardapioContainer.classList.add("product-cardapio-container");
-    for (let i = 0; i < bebidas.length; i++) {
-        //button
-        let button = document.createElement("button");
-        let btnProductContainer = document.createElement("div");
-        button.textContent = "Adicionar ao carrinho";
-        button.classList.add("btn")
-        button.classList.add("btn-primary")
+    // Criando o elemento div para o container dos produtos
+    let productCardapioContainer = $("<div>").addClass("product-cardapio-container");
 
-          // addtocart func
-        button.addEventListener("click", () => {
+    // Iterando sobre as bebidas para criar os elementos
+    $.each(bebidas, function (index, bebida) {
+        // Criando o botão "Adicionar ao carrinho"
+        let button = $("<button>").addClass("btn btn-primary").text("Adicionar ao carrinho");
+
+        // Adicionando o evento de clique ao botão
+        button.on("click", function () {
             let data = {
-                id: bebidas[i].id,
+                id: bebida.id,
                 item: {
-                    name: bebidas[i].name,
-                    imgURL: bebidas[i].imgURL
+                    name: bebida.name,
+                    imgURL: bebida.imgURL
                 },
-                value: bebidas[i].price
+                value: bebida.price
             };
             addToCart(data);
-            
         });
 
-        
-        btnProductContainer.classList.add("btn-product-container")
-        btnProductContainer.appendChild(button)
+        // Criando o elemento div para o container do botão
+        let btnProductContainer = $("<div>").addClass("btn-product-container").append(button);
 
-        //text
-        let textProductContainer = document.createElement("div");
-        textProductContainer.classList.add("text-product-container")
-        let h2 = document.createElement("h2");
-        h2.textContent = bebidas[i].name;
-        let p = document.createElement("p");
-        p.textContent = moeda + bebidas[i].price;
+        // Criando o elemento div para o container do texto
+        let textProductContainer = $("<div>").addClass("text-product-container");
+        let h2 = $("<h2>").text(bebida.name);
+        let p = $("<p>").text(moeda + bebida.price);
         textProductContainer.append(h2, p);
 
+        // Criando o elemento div para o container do conteúdo do produto
+        let productBoxContent = $("<div>").addClass("product-box-content").append(textProductContainer, btnProductContainer);
 
-        //product box content
-        let productBoxContent = document.createElement("div");
-        productBoxContent.classList.add("product-box-content")
-        productBoxContent.append(textProductContainer, btnProductContainer)
+        // Criando o elemento div para o container da imagem do produto
+        let productBoxImg = $("<div>").addClass("product-box-img");
+        let img = $("<img>").attr({
+            src: bebida.imgURL,
+            alt: bebida.name
+        });
+        productBoxImg.append(img);
 
+        // Criando o elemento div para o container do produto
+        let productBox = $("<div>").addClass("product-box").append(productBoxImg, productBoxContent);
 
-        //product box img
-        let productBoxImg = document.createElement("div");
-        productBoxImg.classList.add("product-box-img")
-        let img = document.createElement("img");
-        img.src = bebidas[i].imgURL;
-        img.alt = bebidas[i].name;
-        productBoxImg.appendChild(img);
+        // Adicionando o produto ao container de produtos
+        productCardapioContainer.append(productBox);
+    });
 
-
-        //product box
-        let productBox = document.createElement("div");
-        productBox.classList.add("product-box")
-        productBox.append(productBoxImg, productBoxContent);
-
-        productCardapioContainer.append(productBox)
-    }
-    listProduct.appendChild(productCardapioContainer);
+    // Adicionando o container de produtos ao elemento com id "list-product"
+    $("#list-product").append(productCardapioContainer);
 }

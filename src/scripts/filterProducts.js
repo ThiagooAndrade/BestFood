@@ -1,45 +1,48 @@
-const filterAllBtn = document.getElementById("filter-all")
-const filterOnlyPizzaBtn = document.getElementById("filter-only-pizzas")
-const filterOnlyHamburgersBtn = document.getElementById("filter-only-hamburgers")
-const filterOnlyHotdogsBtn = document.getElementById("filter-only-hotdogs")
-const filterOnlyBebidasBtn = document.getElementById("filter-only-bebidas")
-const filterOnlyAcompanhamentosBtn = document.getElementById("filter-only-acompanhamentos")
+$(document).ready(function () {
+    const filterAllBtn = $("#filter-all");
+    const filterOnlyPizzaBtn = $("#filter-only-pizzas");
+    const filterOnlyHamburgersBtn = $("#filter-only-hamburgers");
+    const filterOnlyHotdogsBtn = $("#filter-only-hotdogs");
+    const filterOnlyBebidasBtn = $("#filter-only-bebidas");
+    const filterOnlyAcompanhamentosBtn = $("#filter-only-acompanhamentos");
 
-var listProduct = document.getElementById("list-product")
+    const listProduct = $("#list-product");
 
-function filterAllInitial() {
-    listProduct.innerText = "";
-    addPizzaOnListProduct();
-    addHamburgerOnListProduct();
-    addHotdogOnListProduct();
-    addBebidasOnListProduct();
-    addAcompanhamentosOnListProduct();
-}
+    function filterAllInitial() {
+        listProduct.empty();
+        addPizzaOnListProduct();
+        addHamburgerOnListProduct();
+        addHotdogOnListProduct();
+        addBebidasOnListProduct();
+        addAcompanhamentosOnListProduct();
+    }
 
-filterAllInitial();
+    filterAllInitial();
 
-filterAllBtn.addEventListener("click", filterAllInitial);
+    filterAllBtn.on("click", filterAllInitial);
 
-filterOnlyPizzaBtn.addEventListener("click", () => {
-    listProduct.innerText = "";
-    addPizzaOnListProduct();
-})
-filterOnlyHamburgersBtn.addEventListener("click", () => {
-    listProduct.innerText = "";
-    addHamburgerOnListProduct();
-})
-filterOnlyHotdogsBtn.addEventListener("click", () => {
-    listProduct.innerText = "";
-    addHotdogOnListProduct();
-})
-filterOnlyBebidasBtn.addEventListener("click", () => {
-    listProduct.innerText = "";
-    addBebidasOnListProduct();
-})
-filterOnlyAcompanhamentosBtn.addEventListener("click", () => {
-    listProduct.innerText = "";
-    addAcompanhamentosOnListProduct();
-})
+    filterOnlyPizzaBtn.on("click", function () {
+        listProduct.empty();
+        addPizzaOnListProduct();
+    });
 
+    filterOnlyHamburgersBtn.on("click", function () {
+        listProduct.empty();
+        addHamburgerOnListProduct();
+    });
 
+    filterOnlyHotdogsBtn.on("click", function () {
+        listProduct.empty();
+        addHotdogOnListProduct();
+    });
 
+    filterOnlyBebidasBtn.on("click", function () {
+        listProduct.empty();
+        addBebidasOnListProduct();
+    });
+
+    filterOnlyAcompanhamentosBtn.on("click", function () {
+        listProduct.empty();
+        addAcompanhamentosOnListProduct();
+    });
+});

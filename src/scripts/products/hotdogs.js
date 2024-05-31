@@ -21,76 +21,62 @@ let hotdogs = [
 
 
 function addHotdogOnListProduct() {
-    let text_div = document.createElement("div")
-    text_div.classList.add("mt-4");
-    text_div.classList.add("mb-4");
-    let text = document.createElement("h1");
-    text.classList.add("text-center");
-    text.textContent = "HOTDOGS";
-    text_div.appendChild(text);
+    // Criando o elemento div para o texto
+    let text_div = $("<div>").addClass("mt-4 mb-4");
+    let text = $("<h1>").addClass("text-center").text("HOTDOGS");
+    text_div.append(text);
 
+    // Adicionando o texto ao elemento com id "list-product"
+    $("#list-product").append(text_div);
 
-    let listProduct = document.getElementById("list-product");
-    listProduct.appendChild(text_div);
-    let productCardapioContainer = document.createElement("div");
-    productCardapioContainer.classList.add("product-cardapio-container")
-    for (let i = 0; i < hotdogs.length; i++) {
-        //button
-        let button = document.createElement("button");
-        let btnProductContainer = document.createElement("div");
-        button.textContent = "Adicionar ao carrinho";
-        button.classList.add("btn")
-        button.classList.add("btn-primary")
+    // Criando o elemento div para o container dos produtos
+    let productCardapioContainer = $("<div>").addClass("product-cardapio-container");
 
-        // addtocart func
-        button.addEventListener("click", () => {
+    // Iterando sobre os hotdogs para criar os elementos
+    $.each(hotdogs, function (index, hotdog) {
+        // Criando o botão "Adicionar ao carrinho"
+        let button = $("<button>").addClass("btn btn-primary").text("Adicionar ao carrinho");
+
+        // Adicionando o evento de clique ao botão
+        button.on("click", function () {
             let data = {
-                id: hotdogs[i].id,
+                id: hotdog.id,
                 item: {
-                    name: hotdogs[i].name,
-                    imgURL: hotdogs[i].imgURL
+                    name: hotdog.name,
+                    imgURL: hotdog.imgURL
                 },
-                value: hotdogs[i].price
+                value: hotdog.price
             };
             addToCart(data);
-            
         });
 
-        btnProductContainer.classList.add("btn-product-container")
-        btnProductContainer.appendChild(button)
+        // Criando o elemento div para o container do botão
+        let btnProductContainer = $("<div>").addClass("btn-product-container").append(button);
 
-        //text
-        let textProductContainer = document.createElement("div");
-        textProductContainer.classList.add("text-product-container")
-        let h2 = document.createElement("h2");
-        h2.textContent = hotdogs[i].name;
-        let p = document.createElement("p");
-        p.textContent = moeda + hotdogs[i].price;
+        // Criando o elemento div para o container do texto
+        let textProductContainer = $("<div>").addClass("text-product-container");
+        let h2 = $("<h2>").text(hotdog.name);
+        let p = $("<p>").text(moeda + hotdog.price);
         textProductContainer.append(h2, p);
 
+        // Criando o elemento div para o container do conteúdo do produto
+        let productBoxContent = $("<div>").addClass("product-box-content").append(textProductContainer, btnProductContainer);
 
-        //product box content
-        let productBoxContent = document.createElement("div");
-        productBoxContent.classList.add("product-box-content")
-        productBoxContent.append(textProductContainer, btnProductContainer)
+        // Criando o elemento div para o container da imagem do produto
+        let productBoxImg = $("<div>").addClass("product-box-img");
+        let img = $("<img>").attr({
+            src: hotdog.imgURL,
+            alt: hotdog.name
+        });
+        productBoxImg.append(img);
 
+        // Criando o elemento div para o container do produto
+        let productBox = $("<div>").addClass("product-box").append(productBoxImg, productBoxContent);
 
-        //product box img
-        let productBoxImg = document.createElement("div");
-        productBoxImg.classList.add("product-box-img")
-        let img = document.createElement("img");
-        img.src = hotdogs[i].imgURL;
-        img.alt = hotdogs[i].name;
-        productBoxImg.appendChild(img);
+        // Adicionando o produto ao container de produtos
+        productCardapioContainer.append(productBox);
+    });
 
-
-        //product box
-        let productBox = document.createElement("div");
-        productBox.classList.add("product-box")
-        productBox.append(productBoxImg, productBoxContent);
-
-        productCardapioContainer.append(productBox)
-    }
-    listProduct.appendChild(productCardapioContainer);
+    // Adicionando o container de produtos ao elemento com id "list-product"
+    $("#list-product").append(productCardapioContainer);
 }
-

@@ -1,7 +1,6 @@
-
 .carrinho-container {
     width: 100%;
-    max-width: 393px;
+    /* max-width: 393px; */
     /* display: none; */
 }
 
@@ -52,7 +51,7 @@
 
 @media (min-width: 1320px) {
 
-/* 
+    /* 
     .carrinho-container-desktop {
         display: block;
     } */

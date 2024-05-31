@@ -3,8 +3,8 @@ let acompanhamentos = [
         id: 28,
         name: "Batata Frita",
         price: "15.90",
-        imgURL: "./src/assets/batatafrita.jpg" 
-    }, 
+        imgURL: "./src/assets/batatafrita.jpg"
+    },
     {
         id: 29,
         name: "Nuggets",
@@ -13,77 +13,51 @@ let acompanhamentos = [
     }
 ]
 
-
 function addAcompanhamentosOnListProduct() {
-    let text_div = document.createElement("div");
-    text_div.classList.add("mt-4");
-    text_div.classList.add("mb-4");
-    let text = document.createElement("h1");
-    text.classList.add("text-center");
-    text.textContent = "ACOMPANHAMENTOS";
-    text_div.appendChild(text);
+    let text_div = $("<div></div>").addClass("mt-4 mb-4");
+    let text = $("<h1></h1>").addClass("text-center").text("ACOMPANHAMENTOS");
+    text_div.append(text);
 
-
-    let listProduct = document.getElementById("list-product");
-    listProduct.appendChild(text_div);
-    let productCardapioContainer = document.createElement("div");
-    productCardapioContainer.classList.add("product-cardapio-container");
-    for (let i = 0; i < acompanhamentos.length; i++) {
+    let listProduct = $("#list-product");
+    listProduct.append(text_div);
+    let productCardapioContainer = $("<div></div>").addClass("product-cardapio-container");
+    $.each(acompanhamentos, function (i, acompanhamento) {
         //button
-        let button = document.createElement("button");
-        let btnProductContainer = document.createElement("div");
-        button.textContent = "Adicionar ao carrinho";
-        button.classList.add("btn");
-        button.classList.add("btn-primary");
+        let button = $("<button></button>").text("Adicionar ao carrinho").addClass("btn btn-primary");
 
         // addtocart func
-        button.addEventListener("click", () => {
+        button.on("click", function () {
             let data = {
-                id: acompanhamentos[i].id,
+                id: acompanhamento.id,
                 item: {
-                    name: acompanhamentos[i].name,
-                    imgURL: acompanhamentos[i].imgURL
+                    name: acompanhamento.name,
+                    imgURL: acompanhamento.imgURL
                 },
-                value: acompanhamentos[i].price
+                value: acompanhamento.price
             };
             addToCart(data);
-            
         });
-    
-        btnProductContainer.classList.add("btn-product-container");
-        btnProductContainer.appendChild(button);
+
+        let btnProductContainer = $("<div></div>").addClass("btn-product-container").append(button);
 
         //text
-        let textProductContainer = document.createElement("div");
-        textProductContainer.classList.add("text-product-container");
-        let h2 = document.createElement("h2");
-        h2.textContent = acompanhamentos[i].name;
-        let p = document.createElement("p");
-        p.textContent = moeda + acompanhamentos[i].price;
+        let textProductContainer = $("<div></div>").addClass("text-product-container");
+        let h2 = $("<h2></h2>").text(acompanhamento.name);
+        let p = $("<p></p>").text(moeda + acompanhamento.price);
         textProductContainer.append(h2, p);
 
-
         //product box content
-        let productBoxContent = document.createElement("div");
-        productBoxContent.classList.add("product-box-content");
-        productBoxContent.append(textProductContainer, btnProductContainer);
-
+        let productBoxContent = $("<div></div>").addClass("product-box-content").append(textProductContainer, btnProductContainer);
 
         //product box img
-        let productBoxImg = document.createElement("div");
-        productBoxImg.classList.add("product-box-img");
-        let img = document.createElement("img");
-        img.src = acompanhamentos[i].imgURL;
-        img.alt = acompanhamentos[i].name;
-        productBoxImg.appendChild(img);
-
+        let productBoxImg = $("<div></div>").addClass("product-box-img");
+        let img = $("<img>").attr("src", acompanhamento.imgURL).attr("alt", acompanhamento.name);
+        productBoxImg.append(img);
 
         //product box
-        let productBox = document.createElement("div");
-        productBox.classList.add("product-box");
-        productBox.append(productBoxImg, productBoxContent);
+        let productBox = $("<div></div>").addClass("product-box").append(productBoxImg, productBoxContent);
 
         productCardapioContainer.append(productBox);
-    }
-    listProduct.appendChild(productCardapioContainer);
+    });
+    listProduct.append(productCardapioContainer);
 }

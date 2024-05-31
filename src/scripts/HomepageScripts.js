@@ -1,106 +1,90 @@
-const carrinhoBody = document.querySelector(".carrinho-body");
-const valueTotal = document.querySelector(".carrinho-valor-total");
+const carrinhoBody = $(".carrinho-body");
+const valueTotal = $(".carrinho-valor-total");
 const moeda = "R$";
-
 let cartState = [];
 
-const finalizarPedido = document.querySelector(
-    ".carrinho-finalizar-pedido-button"
-);
+const finalizarPedido = $(".carrinho-finalizar-pedido-button");
 
-finalizarPedido.addEventListener("click", () => {
-    carrinhoBody.innerHTML = "";
-    valueTotal.textContent = "0.00";
+finalizarPedido.on("click", function () {
+    carrinhoBody.empty();
+    valueTotal.text("0.00");
     cartState = [];
 });
 
 function addToCart(obj) {
     if (verificaSeEstaNoCarrinho(obj)) {
-        let quantityText = document.querySelector(`.quantityText${obj.id}`);
+        let quantityText = $(`.quantityText${obj.id}`);
 
-        quantityText.textContent = Number(quantityText.textContent) + 1;
+        quantityText.text(parseInt(quantityText.text()) + 1);
 
-        valueTotal.textContent = (
-            parseFloat(valueTotal.textContent) + parseFloat(obj.value)
-        ).toFixed(2);
+        valueTotal.text(
+            (parseFloat(valueTotal.text()) + parseFloat(obj.value)).toFixed(2)
+        );
     } else {
-        const tr = document.createElement("tr");
-        const aboutItem = document.createElement("td");
-        const img = document.createElement("img");
-        const nameItem = document.createElement("p");
-        const value = document.createElement("td");
-        const quantity = document.createElement("td");
-        const buttonRemoveOne = document.createElement("button");
-        const textQuantityContainer = document.createElement("div");
-        const textQuantity = document.createElement("p");
+        const tr = $("<tr>");
+        const aboutItem = $("<td>");
+        const img = $("<img>");
+        const nameItem = $("<p>");
+        const value = $("<td>");
+        const quantity = $("<td>");
+        const buttonRemoveOne = $("<button>");
+        const textQuantityContainer = $("<div>");
+        const textQuantity = $("<p>");
 
-        if (valueTotal.textContent == "0.00") {
-            valueTotal.textContent = parseFloat(obj.value).toFixed(2);
+        if (valueTotal.text() == "0.00") {
+            valueTotal.text(parseFloat(obj.value).toFixed(2));
         } else {
-            valueTotal.textContent = (
-                parseFloat(valueTotal.textContent) + parseFloat(obj.value)
-            ).toFixed(2);
+            valueTotal.text(
+                (parseFloat(valueTotal.text()) + parseFloat(obj.value)).toFixed(2)
+            );
         }
 
-        tr.id = obj.id + "tr";
+        tr.attr("id", obj.id + "tr");
 
-        textQuantity.classList.add(`quantityText${obj.id}`);
+        textQuantity.addClass(`quantityText${obj.id}`);
 
-        nameItem.textContent = obj.item.name;
-        nameItem.style.fontWeight = "bold";
-        textQuantityContainer.style.marginLEft = "auto";
-        img.src = obj.item.imgURL;
-        img.alt = obj.item.name;
-        img.width = 75;
-        img.height = 50;
-        img.style.borderRadius = "0.25rem";
+        nameItem.text(obj.item.name);
+        nameItem.css("font-weight", "bold");
+        textQuantityContainer.css("margin-left", "auto");
+        img.attr("src", obj.item.imgURL)
+            .attr("alt", obj.item.name)
+            .attr("width", 75)
+            .attr("height", 50)
+            .css("border-radius", "0.25rem");
 
-        buttonRemoveOne.classList.add("btn", "btn-primary");
+        buttonRemoveOne.addClass("btn btn-primary")
+            .text("Remover um")
+            .on("click", () => {
+                valueTotal.text(
+                    (parseFloat(valueTotal.text()) - parseFloat(obj.value)).toFixed(2)
+                );
 
-        buttonRemoveOne.textContent = "Remover um";
+                let currentQuantity = parseInt(textQuantity.text());
+                if (currentQuantity > 1) {
+                    textQuantity.text(currentQuantity - 1);
+                } else {
+                    tr.remove();
+                    cartState = cartState.filter(item => item.id !== obj.id);
+                }
+            });
 
-        textQuantityContainer.appendChild(textQuantity);
+        textQuantity.text(1);
 
-        aboutItem.appendChild(nameItem);
-        aboutItem.appendChild(img);
+        quantity.append(textQuantity).append(buttonRemoveOne);
 
-        textQuantity.textContent = 1;
+        value.text(obj.value);
 
-        quantity.appendChild(textQuantity);
-        quantity.appendChild(buttonRemoveOne);
+        aboutItem.append(nameItem).append(img)
 
-        value.textContent = obj.value;
+        tr.append(aboutItem)
+            .append(value)
+            .append(quantity);
 
-        buttonRemoveOne.addEventListener("click", () => {
-            valueTotal.textContent = (
-                parseFloat(valueTotal.textContent) - parseFloat(obj.value)
-            ).toFixed(2);
-
-            if (Number(textQuantity.textContent) > 1) {
-                textQuantity.textContent = Number(textQuantity.textContent) - 1;
-            } else {
-                tr.outerHTML = "";
-                cartState.forEach((item) => {
-                    if ((item.id = obj.id)) {
-                        cartState.pop(item);
-                    }
-                });
-            }
-        });
-
-        tr.appendChild(aboutItem);
-        tr.appendChild(value);
-        tr.appendChild(quantity);
-
-        carrinhoBody.appendChild(tr);
+        carrinhoBody.append(tr);
 
         cartState.push(obj);
     }
 }
-
-
-
-
 
 function verificaSeEstaNoCarrinho(obj) {
     for (let i = 0; i < cartState.length; i++) {

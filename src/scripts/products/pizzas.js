@@ -98,6 +98,67 @@ let pizzasGrande = [
 ]
 
 
+function addPizzaOnListProduct() {
+    const listProduct = document.getElementById("list-product")
+    const pizzaContainer = document.createElement("div");
+
+    pizzaContainer.innerHTML = `
+    <div class="mt-4 mb-4">
+        <h1 class="text-center">PIZZAS</h1>
+    </div>
+    <div class="product-cardapio-container">
+        <div class="product-box">
+            <div class="product-box-content w-100">
+                <div class="text-product-container">
+                    <h2>Pequena</h2>
+                    <p>A partir de <span>R$ 34,00</span></p>
+                </div>
+                <div class="btn-product-container">
+                    <button class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#pizzasPequenaModal">
+                        Veja mais
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product-box">
+            <div class="product-box-content w-100">
+                <div class="text-product-container">
+                    <h2>Média</h2>
+                    <p>A partir de <span>R$ 42,00</span></p>
+                </div>
+                <div class="btn-product-container">
+                    <button class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#pizzasMediaModal">
+                        Veja mais
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product-box">
+            <div class="product-box-content w-100">
+                <div class="text-product-container">
+                    <h2>Grande</h2>
+                    <p>A partir de <span>R$ 57,90</span></p>
+                </div>
+                <div class="btn-product-container">
+                    <button class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#pizzasGrandeModal">
+                        Veja mais
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>`
+
+    listProduct.appendChild(pizzaContainer)
+
+    criarPizzaPequenaModal()
+    criarPizzaMediaModal()
+    criarPizzaGrandeModal()
+} 
+
+
 function criarPizzaPequenaModal() {
     // Criando o elemento div para o modal
     const modalDiv = document.createElement('div');

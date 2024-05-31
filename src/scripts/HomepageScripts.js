@@ -98,14 +98,9 @@ function addToCart(obj) {
     }
 }
 
-// Chamando a função para criar o modal de pizza
-criarPizzaPequenaModal();
-criarPizzaMediaModal();
-criarPizzaGrandeModal();
-addHamburgerOnListProduct();
-addHotdogOnListProduct();
-addBebidasOnListProduct();
-addAcompanhamentosOnListProduct();
+
+
+
 
 function verificaSeEstaNoCarrinho(obj) {
     for (let i = 0; i < cartState.length; i++) {

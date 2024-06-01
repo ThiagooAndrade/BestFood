@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https:/unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https:/unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./src/styles/Menu.css">
+    <title>BestFood</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-header">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">BestFood</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./Homepage.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu.html">Menu</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="products-container" class="d-flex justify-content-center gap-4">
+            <div id="products-container-center">
+                <div>
+                    <div class="p-2">
+                        <div class="dropdown d-flex justify-content-end">
+                            <button class="btn btn-secondary dropdown-toggle me-2" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Filtrar cardápio
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="filter-all" class="dropdown-item" href="#">Todos</a>
+                                </li>
+                                <li>
+                                    <a id="filter-only-pizzas" class="dropdown-item" href="#">Pizzas</a>
+                                </li>
+                                <li>
+                                    <a id="filter-only-hamburgers" class="dropdown-item" href="#">Hamburgers</a>
+                                </li>
+                                <li>
+                                    <a id="filter-only-bebidas" class="dropdown-item" href="#">Bebidas</a>
+                                </li>
+                                <li>
+                                    <a id="filter-only-hotdogs" class="dropdown-item" href="#">Hotdogs</a>
+                                </li>
+                                <li>
+                                    <a id="filter-only-acompanhamentos" class="dropdown-item"
+                                        href="#">Acompanhamentos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- menu -->
+                <div id="list-product" class="p-2 mb-4">
+
+                </div>
+            </div>
+        </section>
+
+        <button type="button" class="btn btn-primary showCarrinho-modal" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            <img class="icone-carrinho" src="./src/assets/carrinho-de-compras.png" alt="">
+            <span id="carrinho-quantity-text"> </span>
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                            Modal title
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="carrinho-body-modal" class="modal-body">
+                        <div class="carrinho-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="w-45">Item</th>
+                                        <th scope="col" class="w-20">Valor</th>
+                                        <th scope="col" class="w-100">
+                                            Quantidade
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="carrinho-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="carrinho-finalizar-pedido">
+                            <p>
+                                R$<span class="carrinho-valor-total">0.00</span>
+                            </p>
+                            <button class="btn btn-primary carrinho-finalizar-pedido-button" data-bs-dismiss="modal">
+                                Finalizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <footer id="footer">
+            <div id="footer-container">
+                <div id="footer-contactUs-container">
+                    <h2>Contact us</h2>
+                    <ul>
+                        <li>
+                            <p>E-mail: mail@mail.com</p>
+                        </li>
+                        <li>
+                            <p>5124 Road road</p>
+                        </li>
+                        <li>
+                            <p>Phone: +1 231 312 323</p>
+                        </li>
+                        <li>
+                            <p>Telephone: +1 231 312 323</p>
+                        </li>
+                        <li>
+                            <a href="./Register.html">Create an Account</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="footer-vr" class="vr"></div>
+                <div id="footer-second-container">
+                    <h2>Connect Online</h2>
+                    <div class="connect-online-container">
+                        <a href="https://twitter.com/home">
+                            <ion-icon class="connect-online-icon" name="logo-twitter"></ion-icon>
+                        </a>
+                        <a href="https://facebook.com">
+                            <ion-icon class="connect-online-icon" name="logo-facebook"></ion-icon>
+                        </a>
+                    </div>
+
+                    <div id="footer-stay-informed-container" class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Stay Informed</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="email address..." />
+                        <button id="stay-informed-button" class="btn btn-danger">
+                            Sign UP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </footer>
+    <script src="./src/jquery/jquery-3.7.1.min.js"></script>
+    <script src="./src/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./src/scripts/menuScripts.js"></script>
+    <script src="./src/scripts/products/hamburgers.js"></script>
+    <script src="./src/scripts/products/pizzas.js"></script>
+    <script src="./src/scripts/products/bebidas.js"></script>
+    <script src="./src/scripts/products/acompanhamentos.js"></script>
+    <script src="./src/scripts/products/hotdogs.js"></script>
+    <script src="./src/scripts/filterProducts.js"></script>
+</body>
+
+</html>

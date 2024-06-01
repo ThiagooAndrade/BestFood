@@ -1,8 +1,8 @@
-@import url("../../global.css");
+@import url("../global.css");
 @import url("./header/styles.css");
 @import url("./Products/styles.css");
 @import url("./carrinho/styles.css");
-@import url("../Footer/footer.css");
+@import url("./Footer/styles.css");
 
 
 .carousel-indicators {
@@ -44,38 +44,4 @@
     /* text-align: center; */
     /* margin: auto; */
     /* padding-left: 50px; */
-}
-
-.only-text {
-    color: #F4B43F;
-
-}
-
-.price-text {
-    font-size: 5rem;
-    color: #F4B43F;
-    text-transform: uppercase;
-}
-
-.button-order {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    border-radius: 0.125rem;
-    background-color: #F4B43F;
-    text-transform: uppercase;
-    font-weight: 700;
-    height: 3rem;
-    max-width: 150px;
-    /* align-items: center; */
-    /* padding: 2rem; */
-    transition: filter 0.2s;
-    z-index: 2;
-
-}
-
-.button-order:hover {
-    filter: brightness(0.9);
 }

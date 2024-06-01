@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BestFood</title>
-    <link rel="stylesheet" href="./src/styles/Homepage/Homepage.css" />
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./src/styles/Homepage.css" />
+    <script type="module" src="https:/unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https:/unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -24,10 +24,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="./Homepage.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="/Menu.html">Menu</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -55,16 +55,13 @@
         </nav>
     </header>
 
-    <main>
+    <!-- <main>
         <section id="products-container" class="d-flex justify-content-center gap-4">
             <div id="products-container-center">
                 <div>
-                    <h1>
-                        Veja nosso cardápio abaixo.
-                    </h1>
                     <div class="p-2">
                         <div class="dropdown d-flex justify-content-end">
-                            <button class="btn btn-secondary dropdown-toggle me-4" type="button"
+                            <button class="btn btn-secondary dropdown-toggle me-2" type="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Filtrar cardápio
                             </button>
@@ -93,60 +90,13 @@
                     </div>
                 </div>
 
-                <!-- menu -->
+
                 <div id="list-product" class="p-2 mb-4">
 
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
-
-    <button type="button" class="btn btn-primary showCarrinho-modal" data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop">
-        <img class="icone-carrinho" src="./src/assets/carrinho-de-compras.png" alt="">
-        <span id="carrinho-quantity-text"> </span>
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                        Modal title
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div id="carrinho-body-modal" class="modal-body">
-                    <div class="carrinho-container">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="w-45">Item</th>
-                                    <th scope="col" class="w-20">Valor</th>
-                                    <th scope="col" class="w-100">
-                                        Quantidade
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="carrinho-body"></tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="carrinho-finalizar-pedido">
-                        <p>
-                            R$<span class="carrinho-valor-total">0.00</span>
-                        </p>
-                        <button class="btn btn-primary carrinho-finalizar-pedido-button" data-bs-dismiss="modal">
-                            Finalizar
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
         <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3" class="responsive-map"></div>
@@ -234,13 +184,6 @@
     </footer>
     <script src="./src/jquery/jquery-3.7.1.min.js"></script>
     <script src="./src/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="./src/scripts/HomepageScripts.js"></script>
-    <script src="./src/scripts/products/hamburgers.js"></script>
-    <script src="./src/scripts/products/pizzas.js"></script>
-    <script src="./src/scripts/products/bebidas.js"></script>
-    <script src="./src/scripts/products/acompanhamentos.js"></script>
-    <script src="./src/scripts/products/hotdogs.js"></script>
-    <script src="./src/scripts/filterProducts.js"></script>
 </body>
 
 </html>

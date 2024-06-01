@@ -1,0 +1,5 @@
+@import url("../global.css");
+@import url("./header/styles.css");
+@import url("./Products/styles.css");
+@import url("./carrinho/styles.css");
+@import url("./Footer/styles.css");

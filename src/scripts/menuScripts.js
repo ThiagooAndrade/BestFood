@@ -90,7 +90,7 @@ function addToCart(obj) {
 
         quantity.append(textQuantity).append(buttonRemoveOne);
 
-        value.text(obj.value);
+        value.text("R$ " + obj.value);
 
         aboutItem.append(nameItem).append(img)
 

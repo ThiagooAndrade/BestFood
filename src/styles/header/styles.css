@@ -1,10 +1,6 @@
 #header {
-    /* height: 120px; */
-    background-color: var(--header-front-bg);
-    margin-bottom: 50px;
+    margin-bottom: 55px;
     width: 100%;
-    position: static;
-    z-index: 2;
 }
 
 /* para o navbar nao empurrar os outros componentes */
@@ -16,48 +12,4 @@
     top: 0;
     padding: 0.5rem;
     /* position: sticky; */
-}
-
-.navbar-toggler-icon {
-    /* fill: aqua; */
-}
-
-#header-search {
-    /* margin-top: 100px; */
-}
-
-#header-search-in-nav {
-    visibility: hidden;
-    height: 0;
-}
-
-/* #header-search-off-nav {
-    width: 90%;
-    z-index: 1;
-    margin: 0px 10px;
-} */
-
-
-
-@media (min-width: 992px) {
-    #header-search-off-nav {
-        visibility: hidden;
-    }
-
-    #header-search-in-nav {
-        visibility: visible;
-        height: auto;
-        width: 50%;
-    }
-
-    #header {
-        height: 60px;
-        padding: 0;
-    }
-}
-
-@media (min-width: 1600px) {
-    #header-search-in-nav {
-        width: 30%;
-    }
 }

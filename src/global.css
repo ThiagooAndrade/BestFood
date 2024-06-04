@@ -16,14 +16,6 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: url(../src/assets/piso.jpg);
-    font-family: "Sevillana variant0", Tofu;
-}
-
 button {
     cursor: pointer;
 }

@@ -27,22 +27,22 @@ filterOnlyPizzaBtn.on("click", function () {
 
 filterOnlyHamburgersBtn.on("click", function () {
     listProduct.empty();
-    addHamburgerOnListProduct();
+    addOnListProduct(hamburgers, "HAMBURGERS");
 });
 
 filterOnlyHotdogsBtn.on("click", function () {
     listProduct.empty();
-    addHotdogOnListProduct();
+    addOnListProduct(hotdogs, "HOTDOGS");
 });
 
 filterOnlyBebidasBtn.on("click", function () {
     listProduct.empty();
-    addBebidasOnListProduct();
+    addOnListProduct(bebidas, "BEBIDAS");
 });
 
 filterOnlyAcompanhamentosBtn.on("click", function () {
     listProduct.empty();
-    addAcompanhamentosOnListProduct();
+    addOnListProduct(acompanhamentos, "ACOMPANHAMENTOS");
 });
 
 
@@ -88,8 +88,9 @@ function addOnListProduct(product, name) {
 
         // Criando o elemento div para o container do texto
         let textProductContainer = $("<div>").addClass("text-product-container");
-        let h2 = $("<h2>").text(obj.name);
-        let p = $("<p>").text(moeda + obj.price);
+        let h2 = $("<h2>").text(obj.name).addClass("text-name");
+        let p = $("<p>").text(moeda + obj.price).addClass("text-price");
+        console.log(p)
         textProductContainer.append(h2, p);
 
         // Criando o elemento div para o container do conteúdo do produto

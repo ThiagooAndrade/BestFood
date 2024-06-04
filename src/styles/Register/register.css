@@ -1,0 +1,18 @@
+@import url("../global.css");
+
+body {
+    background-color: #bb7712;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: orange;
+}

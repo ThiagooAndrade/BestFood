@@ -196,7 +196,7 @@ function criarPizzaModals() {
         const headerDiv = $("<div>").addClass("modal-header");
 
         // Criando o título do modal
-        const titleH1 = $("<h1>").addClass("modal-title fs-5").attr("id", "pizzaModalLabel").text(`Pizzas de tamanho ${pizzaTypes[i].size}`);
+        const titleH1 = $("<h1>").addClass("modal-title fs-4").attr("id", "pizzaModalLabel").text(`Pizzas de tamanho ${pizzaTypes[i].size}`);
 
         // Criando o botão para fechar o modal
         const closeButton = $("<button>").addClass("btn-close").attr({

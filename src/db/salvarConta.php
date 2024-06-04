@@ -8,10 +8,25 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['first
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
     $firstName = filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_SPECIAL_CHARS);
 
-    $stmt = $pdo->prepare("INSERT INTO accounts (username,email,password,firstName) VALUES (?,?,?,?)");
-    $stmt->execute([$username, $email, $password, $firstName]);
+    // Validação adicional (opcional)
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Email inválido!";
+        exit;
+    }
 
-    echo "Conta Criada!";
+    // Criptografar a senha
+    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+    try {
+        $stmt = $pdo->prepare("INSERT INTO accounts (username, email, password, firstName) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$username, $email, $hashed_password, $firstName]);
+
+        echo "Conta Criada!";
+    } catch (PDOException $e) {
+        http_response_code(500);
+        echo "Erro ao criar a conta: " . $e->getMessage();
+    }
 } else {
-    http_response_code(500);
+    http_response_code(400); // Código de resposta 400 para bad request
+    echo "Dados incompletos!";
 }

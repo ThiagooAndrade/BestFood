@@ -1,53 +1,45 @@
+#products-container {
+    background-color: #f3f7f7;
+}
+
 #products-container-center {
     width: 100%;
-    max-width: 900px;
+    max-width: 1400px;
     /* margin: auto; */
     /* background-color: #f3f7f7; */
     /* background-color: #ffcc00; */
-    background-color: #ecc92c;
+    /* background-color: #b49d33; */
+    background-color: #f3f7f7;
     border-radius: 0.25rem;
 
 }
 
-#list-product {
-    /* padding: 0 1rem; 
-    display: flex;
-    flex-direction: column;
-     align-items: center;
-    justify-content: center;   */
-
+body {
+    background: url(./src/assets/piso.jpg);
 }
 
-.product-item img {
-    width: 100%;
-    border-radius: 1rem;
-    align-items: center;
-    /* position: absolute; */
+h1 {
+    /* color: white; */
+    font-size: 2rem;
+    color: black;
 }
 
-.product-item {
-    display: flex;
-    flex-direction: column;
-    /* background: #E1E3E7; */
-    /* padding: 1rem; */
-    border-radius: 0.5rem;
+.text-name {
+    color: #374957;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
 }
 
-
-.add-cart-btn {
-    /* width: 200px; */
-    padding: 0 2rem;
-    height: 2.5rem;
-    background-color: red;
-    color: white;
-    font-weight: 700;
-    border: 0;
-    border-radius: 2rem;
-    /* text-transform: uppercase; */
+.text-price {
+    color: #4CD137;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
 }
+
 
 .product-cardapio-container {
-    background-color: #ecc92c;
+    /* background-color: #ecc92c; */
+    /* background-color: red; */
     /* background-color: #f3f7f7; */
     display: flex;
     flex-direction: column;
@@ -58,10 +50,12 @@
     background-color: #ffffff;
     display: flex;
     gap: 5px;
-    height: 125px;
+    height: 135px;
+    min-width: 400px;
     padding: 1rem;
     border-radius: 0.25rem;
     transition: all 0.2s;
+    border: 1px solid #d6e2e2;
 }
 
 .product-box:hover {
@@ -113,5 +107,11 @@
     .product-cardapio-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .product-cardapio-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

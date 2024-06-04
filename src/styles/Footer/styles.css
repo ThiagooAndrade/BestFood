@@ -64,13 +64,11 @@
 
 #footer-stay-informed-container button {
     margin-top: 10px;
-<<<<<<< HEAD
 }
 
 #footer-vr {
     visibility: hidden;
 }
-
 
 
 @media (min-width: 768px) {
@@ -96,6 +94,4 @@
     #footer-contactUs-container {
         padding-right: 150px;
     }
-=======
->>>>>>> 8b0a11cff69fb2852880b1f3b8e42bac303f569b
 }

@@ -167,7 +167,7 @@ function criarPizzaModals() {
         },
         {
             modal: "pizzasMediaModal",
-            size: "medio"
+            size: "médio"
         },
         {
             modal: "pizzasGrandeModal",
@@ -236,7 +236,7 @@ function criarPizzaModals() {
             const tituloH2 = $("<h2>").text(pizza.name);
 
             // Criando o preço do produto
-            const precoP = $("<p>").text(moeda + pizza.price);
+            const precoP = $("<p>").text(moeda + pizza.price).addClass("text-price");
 
             // Adicionando o título e o preço ao container de texto do produto
             textContainerDiv.append(tituloH2, precoP);

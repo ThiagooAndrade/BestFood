@@ -11,13 +11,13 @@ finalizarPedido.on("click", function () {
     valueTotal.text("0.00");
     cartState = [];
     cartLengthText.text(" ")
+    cartLengthText.css("visibility", "hidden")
 });
 
 
 function addToCart(obj) {
     if (verificaSeEstaNoCarrinho(obj)) {
         let quantityText = $(`.quantityText${obj.id}`);
-
         quantityText.text(parseInt(quantityText.text()) + 1);
         cartLengthText.text(parseInt(cartLengthText.text()) + 1)
         valueTotal.text(
@@ -25,6 +25,7 @@ function addToCart(obj) {
         );
 
     } else {
+        cartLengthText.css("visibility", "visible")
         if (cartLengthText.text() == " ") {
             cartLengthText.text(1)
         } else {
@@ -56,7 +57,7 @@ function addToCart(obj) {
 
         nameItem.text(obj.item.name);
         nameItem.css("font-weight", "bold");
-        textQuantityContainer.css("margin-left", "auto");
+        // textQuantityContainer.css("margin-left", "auto");
         img.attr("src", obj.item.imgURL)
             .attr("alt", obj.item.name)
             .attr("width", 75)
@@ -69,7 +70,6 @@ function addToCart(obj) {
                 valueTotal.text(
                     (parseFloat(valueTotal.text()) - parseFloat(obj.value)).toFixed(2)
                 );
-
                 let currentQuantity = parseInt(textQuantity.text());
                 if (currentQuantity > 1) {
                     textQuantity.text(currentQuantity - 1);
@@ -79,6 +79,7 @@ function addToCart(obj) {
                     cartState = cartState.filter(item => item.id !== obj.id);
                     if (cartLengthText.text() == "1") {
                         cartLengthText.text(" ");
+                        cartLengthText.css("visibility", "hidden")
                     } else {
                         cartLengthText.text(Number(cartLengthText.text()) - 1)
                     }

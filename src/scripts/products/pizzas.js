@@ -117,7 +117,7 @@ function addPizzaOnListProduct() {
                         <p>A partir de <span>R$ 34,00</span></p>
                     </div>
                     <div class="btn-product-container">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pizzasPequenaModal">
+                        <button class="btn btn-primary btn-addCart" data-bs-toggle="modal" data-bs-target="#pizzasPequenaModal">
                             Veja mais
                         </button>
                     </div>
@@ -130,7 +130,7 @@ function addPizzaOnListProduct() {
                         <p>A partir de <span>R$ 42,00</span></p>
                     </div>
                     <div class="btn-product-container">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pizzasMediaModal">
+                        <button class="btn btn-primary btn-addCart" data-bs-toggle="modal" data-bs-target="#pizzasMediaModal">
                             Veja mais
                         </button>
                     </div>
@@ -143,7 +143,7 @@ function addPizzaOnListProduct() {
                         <p>A partir de <span>R$ 57,90</span></p>
                     </div>
                     <div class="btn-product-container">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pizzasGrandeModal">
+                        <button class="btn btn-primary btn-addCart" data-bs-toggle="modal" data-bs-target="#pizzasGrandeModal">
                             Veja mais
                         </button>
                     </div>

@@ -63,7 +63,6 @@ function addOnListProduct(product, name) {
         // Criando o botão "Adicionar ao carrinho"
         let button = $("<button>").addClass("btn btn-primary btn-addCart");
 
-
         // Adicionando o ícone usando a tag <ion-icon>
         let icon = $("<ion-icon>").attr("name", "add-outline");
 

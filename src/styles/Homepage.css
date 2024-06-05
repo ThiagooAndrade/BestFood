@@ -4,7 +4,87 @@
 @import url("./carrinho/styles.css");
 @import url("./Footer/styles.css");
 
-
 body {
-    /* font-family: "Sevillana variant0", Tofu; */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#apresentacao {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+#apresentacao h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+#apresentacao p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 20px 0;
+}
+
+.pratos-principais {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.prato {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.prato h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.prato p {
+    font-size: 1em;
+    color: #666;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #ff6600;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #e65c00;
+}
+
+.text-map-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.text-map-container p {
+    font-size: 1em;
+    color: #666;
+    margin: 20px 0;
+}
+
+@media (min-width:920px) {
+    .pratos-principais {
+        flex-direction: row;
+    }
 }

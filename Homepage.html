@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BestFood</title>
     <link rel="stylesheet" href="./src/styles/Homepage.css" />
+    <link rel="shortcut icon" href="./src/assets/icone.png" type="image/x-icon">
+    <script src="./src/scripts/login/isLogged.js"></script>
     <script type="module" src="https:/unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https:/unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-
-
 
 <body>
     <!-- header -->
@@ -26,10 +26,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="./Homepage.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Menu.html">Menu</a>
+                            <a class="nav-link" href="./Menu.html">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="logout" class="nav-link logout" href="#">Deslogar</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -83,7 +86,7 @@
                             oferecendo desde opções clássicas até versões gourmet.</p>
                     </div>
                 </div>
-                <a href="./Menu.html" class="btn">Faça sua Reserva</a>
+                <a href="./Menu.html" class="btn-menu">Faça sua Reserva</a>
             </div>
         </section>
     </main>
@@ -150,12 +153,12 @@
                     <li>
                         <p>Telephone: +1 231 312 323</p>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="./Register.html">Create an Account</a>
                     </li>
                     <li>
                         <a href="#">Privacy Policy</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div id="footer-vr" class="vr"></div>
@@ -183,6 +186,7 @@
     </footer>
     <script src="./src/jquery/jquery-3.7.1.min.js"></script>
     <script src="./src/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./src/scripts/login/logout.js"></script>
 </body>
 
 </html>

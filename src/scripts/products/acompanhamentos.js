@@ -1,14 +1,14 @@
 let acompanhamentos = [
     {
-        id: 29,
+        id: "acompanhamentos" + 1,
         name: "Batata Frita",
-        price: "15.90",
+        price: "9.90",
         imgURL: "./src/assets/batatafrita.jpg"
     },
     {
-        id: 30,
+        id: "acompanhamentos" + 2,
         name: "Nuggets",
-        price: "15.90",
+        price: "8.99",
         imgURL: "./src/assets/nuggets.jpg"
     }
 ]

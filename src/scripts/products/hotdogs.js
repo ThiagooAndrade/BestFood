@@ -1,20 +1,20 @@
 let hotdogs = [
     {
-        id: 6,
+        id: "hotdogs" + 1,
         name: "Tradicional",
-        price: "15.90",
+        price: "10.90",
         imgURL: "./src/assets/hotdogtradicional.jpg"
     },
     {
-        id: 7,
+        id: "hotdogs" + 2,
         name: "Em espeto",
-        price: "15.90",
+        price: "9.90",
         imgURL: "./src/assets/hotdogespeto.jpg"
     },
     {
-        id: 8,
+        id: "hotdogs" + 3,
         name: "Crepe",
-        price: "15.90",
+        price: "11.90",
         imgURL: "./src/assets/hotdogcrepe.jpg"
     }
 ]

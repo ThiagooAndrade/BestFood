@@ -31,7 +31,6 @@ function addToCart(obj) {
         } else {
             cartLengthText.text(Number(cartLengthText.text()) + 1)
         }
-        console.log("inicial" + cartLengthText.text())
 
         const tr = $("<tr>");
         const aboutItem = $("<td>");
@@ -40,7 +39,6 @@ function addToCart(obj) {
         const value = $("<td>");
         const quantity = $("<td>");
         const buttonRemoveOne = $("<button>");
-        const textQuantityContainer = $("<div>");
         const textQuantity = $("<p>");
 
         if (valueTotal.text() == "0.00") {
@@ -51,13 +49,12 @@ function addToCart(obj) {
             );
         }
 
-        tr.attr("id", obj.id + "tr");
+        tr.attr("id", "tr" + obj.id);
 
         textQuantity.addClass(`quantityText${obj.id}`);
 
         nameItem.text(obj.item.name);
         nameItem.css("font-weight", "bold");
-        // textQuantityContainer.css("margin-left", "auto");
         img.attr("src", obj.item.imgURL)
             .attr("alt", obj.item.name)
             .attr("width", 75)

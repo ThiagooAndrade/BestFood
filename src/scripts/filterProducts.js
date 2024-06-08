@@ -7,7 +7,7 @@ const filterOnlyAcompanhamentosBtn = $("#filter-only-acompanhamentos");
 
 const listProduct = $("#list-product");
 
-function filterAllInitial() {
+function filterAll() {
     listProduct.empty();
     addPizzaOnListProduct();
     addOnListProduct(hamburgers, "HAMBURGERS");
@@ -16,9 +16,9 @@ function filterAllInitial() {
     addOnListProduct(acompanhamentos, "ACOMPANHAMENTOS");
 }
 
-filterAllInitial();
+filterAll();
 
-filterAllBtn.on("click", filterAllInitial);
+filterAllBtn.on("click", filterAll);
 
 filterOnlyPizzaBtn.on("click", function () {
     listProduct.empty();
@@ -89,7 +89,6 @@ function addOnListProduct(product, name) {
         let textProductContainer = $("<div>").addClass("text-product-container");
         let h2 = $("<h2>").text(obj.name).addClass("text-name");
         let p = $("<p>").text(moeda + obj.price).addClass("text-price");
-        console.log(p)
         textProductContainer.append(h2, p);
 
         // Criando o elemento div para o container do conteúdo do produto

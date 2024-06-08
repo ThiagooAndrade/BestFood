@@ -3,10 +3,12 @@
 
 :root {
     --header-bg: #daa33e;
-    --header-font-color: #cfb896;
-    --font-lato: "Lato", sans-serif;
     --footer-bg: #fefcec;
-    --main-bg: #ff8E47;
+    /* --main-bg: #ff8E47; */
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
 }
 
 * {

@@ -1,4 +1,4 @@
-@import url("../global.css");
+@import url("../../global.css");
 
 body {
     background-color: #bb7712;
@@ -14,5 +14,5 @@ body {
 .login-card {
     width: 100%;
     max-width: 400px;
-    background-color: orange;
+    background-color: #f8f9fa;
 }

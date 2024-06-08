@@ -1,99 +1,99 @@
 let pizzasPequena = [
     {
-        id: 9,
+        id: "pizzaPequena" + 1,
         name: "Mussarela",
         price: "34.00",
         imgURL: "./src/assets/pizzamussarela.jpg"
     },
     {
-        id: 10,
+        id: "pizzaPequena" + 2,
         name: "Calabresa",
         price: "35.00",
         imgURL: "./src/assets/pizzacalabresa.jpg"
     },
     {
-        id: 11,
+        id: "pizzaPequena" + 3,
         name: "Frango Catupiry",
         price: "36.90",
         imgURL: "./src/assets/frangocatupiry.jpg"
     },
     {
-        id: 12,
+        id: "pizzaPequena" + 4,
         name: "Três queijos",
         price: "38.90",
         imgURL: "./src/assets/pizzatresqueijos.jpg"
     },
     {
-        id: 13,
+        id: "pizzaPequena" + 5,
         name: "Portuguesa",
         price: "35.90",
-        imgURL: "./src/assets/pizzaportuguesa.png"
+        imgURL: "./src/assets/pizzaportuguesa.jpg"
     },
 ]
 
 let pizzasMedia = [
     {
-        id: 14,
+        id: "pizzaMedia" + 1,
         name: "Mussarela",
         price: "42.90",
         imgURL: "./src/assets/pizzamussarela.jpg"
     },
     {
-        id: 15,
+        id: "pizzaMedia" + 2,
         name: "Calabresa",
         price: "43.90",
         imgURL: "./src/assets/pizzacalabresa.jpg"
     },
     {
-        id: 16,
+        id: "pizzaMedia" + 3,
         name: "Frango Catupiry",
         price: "44.90",
         imgURL: "./src/assets/frangocatupiry.jpg"
     },
     {
-        id: 17,
+        id: "pizzaMedia" + 4,
         name: "Três queijos",
         price: "45.90",
         imgURL: "./src/assets/pizzatresqueijos.jpg"
     },
     {
-        id: 18,
+        id: "pizzaMedia" + 5,
         name: "Portuguesa",
         price: "43.90",
-        imgURL: "./src/assets/pizzaportuguesa.png"
+        imgURL: "./src/assets/pizzaportuguesa.jpg"
     },
 ]
 
 let pizzasGrande = [
     {
-        id: 19,
+        id: "pizzaGrande" + 1,
         name: "Mussarela",
         price: "57.90",
         imgURL: "./src/assets/pizzamussarela.jpg"
     },
     {
-        id: 20,
+        id: "pizzaGrande" + 2,
         name: "Calabresa",
         price: "58.90",
         imgURL: "./src/assets/pizzacalabresa.jpg"
     },
     {
-        id: 21,
+        id: "pizzaGrande" + 3,
         name: "Frango Catupiry",
         price: "60.90",
         imgURL: "./src/assets/frangocatupiry.jpg"
     },
     {
-        id: 22,
+        id: "pizzaGrande" + 4,
         name: "Três queijos",
         price: "62.90",
         imgURL: "./src/assets/pizzatresqueijos.jpg"
     },
     {
-        id: 23,
+        id: "pizzaGrande" + 5,
         name: "Portuguesa",
         price: "59.90",
-        imgURL: "./src/assets/pizzaportuguesa.png"
+        imgURL: "./src/assets/pizzaportuguesa.jpg"
     },
 ]
 
@@ -285,13 +285,13 @@ function criarPizzaModals() {
         const footerDiv = $("<div>").addClass("modal-footer");
 
         // Criando o botão para fechar o modal
-        const closeButtonFooter = $("<button>").addClass("btn btn-primary").attr({
-            type: "button",
-            "data-bs-dismiss": "modal"
-        }).text("Close");
+        // const closeButtonFooter = $("<button>").addClass("btn btn-primary").attr({
+        //     type: "button",
+        //     "data-bs-dismiss": "modal"
+        // }).text("Close");
 
         // Adicionando a label e o botão ao rodapé do modal
-        footerDiv.append(closeButtonFooter);
+        // footerDiv.append(closeButtonFooter);
 
         // Adicionando o cabeçalho, corpo e rodapé ao conteúdo do modal
         contentDiv.append(headerDiv, bodyDiv, footerDiv);

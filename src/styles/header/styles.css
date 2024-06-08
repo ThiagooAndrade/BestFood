@@ -1,7 +1,10 @@
 #header {
     margin-bottom: 55px;
     width: 100%;
+    font-family: Arial, sans-serif;
 }
+
+
 
 /* para o navbar nao empurrar os outros componentes */
 .navbar-header {

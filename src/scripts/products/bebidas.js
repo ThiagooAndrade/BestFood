@@ -1,32 +1,32 @@
 let bebidas = [
     {
-        id: 24,
+        id: "bebidas" + 1,
         name: "Coca cola",
-        price: "15.90",
+        price: "6.59",
         imgURL: "./src/assets/cocacola.jpg"
     },
     {
-        id: 25,
+        id: "bebidas" + 2,
         name: "Água",
-        price: "15.90",
+        price: "2.50",
         imgURL: "./src/assets/agua.jpg"
     },
     {
-        id: 26,
+        id: "bebidas" + 3,
         name: "Fanta laranja",
-        price: "15.90",
+        price: "4.49",
         imgURL: "./src/assets/fantalaranja.jpg"
     },
     {
-        id: 27,
+        id: "bebidas" + 4,
         name: "Sprite",
-        price: "15.90",
+        price: "3.90",
         imgURL: "./src/assets/sprite.jpg"
     },
     {
-        id: 28,
+        id: "bebidas" + 5,
         name: "Fanta uva",
-        price: "10.00",
+        price: "4.59",
         imgURL: "./src/assets/fantauva.jpg"
     }
 

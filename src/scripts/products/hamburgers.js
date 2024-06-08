@@ -1,30 +1,30 @@
 let hamburgers = [
     {
-        id: 1,
+        id: "hamburgers" + 1,
         name: "Cheeseburger",
-        price: "15.90",
+        price: "10.90",
         imgURL: "./src/assets/cheeseburger.jpg"
     },
     {
-        id: 2,
+        id: "hamburgers" + 2,
         name: "Vegano",
-        price: "15.90",
+        price: "9.90",
         imgURL: "./src/assets/hamburgervegano.jpg"
     },
     {
-        id: 3,
+        id: "hamburgers" + 3,
         name: "Frango grelhado",
-        price: "15.90",
+        price: "12.90",
         imgURL: "./src/assets/hamburgerfrangogrelhado.jpg"
     },
     {
-        id: 4,
+        id: "hamburgers" + 4,
         name: "Recheado",
         price: "15.90",
         imgURL: "./src/assets/hamburgerrecheado.jpg"
     },
     {
-        id: 5,
+        id: "hamburgers" + 5,
         name: "Picanha",
         price: "15.90",
         imgURL: "./src/assets/burguer-de-picanha.jpg"

@@ -11,7 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Vast+Shadow&display=swap"
         rel="stylesheet">
+    <script src="./src/scripts/login/isLogged.js"></script>
     <link rel="stylesheet" href="./src/styles/Menu.css">
+    <link rel="shortcut icon" href="./src/assets/icone.png" type="image/x-icon">
     <title>BestFood</title>
 </head>
 
@@ -32,7 +34,10 @@
                             <a class="nav-link active" aria-current="page" href="./Homepage.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Menu.html">Menu</a>
+                            <a class="nav-link" href="./Menu.html">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="logout" class="nav-link logout" href="#">Deslogar</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -61,7 +66,6 @@
     </header>
 
     <main>
-
         <section id="products-container" class="d-flex justify-content-center gap-4">
             <div id="products-container-center">
                 <div>
@@ -96,7 +100,7 @@
                     </div>
                 </div>
 
-                <!-- menu -->
+                <!-- list-menu -->
                 <div id="list-product" class="p-2 mb-4">
 
                 </div>
@@ -203,13 +207,14 @@
     </footer>
     <script src="./src/jquery/jquery-3.7.1.min.js"></script>
     <script src="./src/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="./src/scripts/menuScripts.js"></script>
+    <script src="./src/scripts/menupage.js"></script>
     <script src="./src/scripts/products/hamburgers.js"></script>
     <script src="./src/scripts/products/pizzas.js"></script>
     <script src="./src/scripts/products/bebidas.js"></script>
     <script src="./src/scripts/products/acompanhamentos.js"></script>
     <script src="./src/scripts/products/hotdogs.js"></script>
     <script src="./src/scripts/filterProducts.js"></script>
+    <script src="./src/scripts/login/logout.js"></script>
 </body>
 
 </html>

@@ -33,7 +33,9 @@ html {
     align-items: center;
 }
 
+
 .gotoRegister {
     color: #0D6EFD;
     text-decoration: underline;
+    display: block;
 }

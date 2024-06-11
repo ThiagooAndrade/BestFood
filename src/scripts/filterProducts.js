@@ -8,6 +8,7 @@ const filterOnlyAcompanhamentosBtn = $("#filter-only-acompanhamentos");
 const listProduct = $("#list-product");
 
 function filterAll() {
+    deleteModals();
     listProduct.empty();
     addPizzaOnListProduct();
     addOnListProduct(hamburgers, "HAMBURGERS");
@@ -21,29 +22,40 @@ filterAll();
 filterAllBtn.on("click", filterAll);
 
 filterOnlyPizzaBtn.on("click", function () {
+    deleteModals();
     listProduct.empty();
     addPizzaOnListProduct();
 });
 
 filterOnlyHamburgersBtn.on("click", function () {
+    deleteModals();
     listProduct.empty();
     addOnListProduct(hamburgers, "HAMBURGERS");
 });
 
 filterOnlyHotdogsBtn.on("click", function () {
+    deleteModals();
     listProduct.empty();
     addOnListProduct(hotdogs, "HOTDOGS");
 });
 
 filterOnlyBebidasBtn.on("click", function () {
+    deleteModals();
     listProduct.empty();
     addOnListProduct(bebidas, "BEBIDAS");
 });
 
 filterOnlyAcompanhamentosBtn.on("click", function () {
+    deleteModals();
     listProduct.empty();
     addOnListProduct(acompanhamentos, "ACOMPANHAMENTOS");
 });
+
+function deleteModals() {
+    $("#pizzasPequenaModal").remove();
+    $("#pizzasMediaModal").remove();
+    $("#pizzasGrandeModal").remove();
+}
 
 
 function addOnListProduct(product, name) {

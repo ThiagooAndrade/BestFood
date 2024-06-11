@@ -11,5 +11,5 @@ function isUserLogged() {
 
 
 if (!isUserLogged()) {
-    window.location.href = "login.html";
+    window.location.href = "Login.html";
 }

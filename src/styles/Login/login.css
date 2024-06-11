@@ -1,4 +1,4 @@
-@import url("../global.css");
+@import url("../../global.css");
 
 body,
 html {
@@ -19,8 +19,7 @@ html {
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .login-title {
@@ -32,4 +31,9 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.gotoRegister {
+    color: #0D6EFD;
+    text-decoration: underline;
 }

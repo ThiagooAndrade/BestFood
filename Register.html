@@ -4,34 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.css">
+    <title>Register</title>
     <link rel="stylesheet" href="./src/styles/Register/register.css">
 </head>
 
 <body>
-    <div class="container login-container">
-        <div class="card login-card">
-            <div class="card-body">
-                <h5 class="card-title text-center">Register</h5>
-                <form method="post" id="cadastro">
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" name="username" class="form-control" id="username" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="senha" class="form-label">Password</label>
-                        <input type="password" name="senha" class="form-control" id="senha" required>
-                    </div>
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Registrar</button>
-                    </div>
-                </form>
-            </div>
+    <div class="container">
+        <div class="register-container">
+            <h2 class="text-center register-title">Register</h2>
+            <form method="post" id="cadastro">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" id="username"
+                        placeholder="Digite seu nome de usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Digite seu e-mail"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="senha" class="form-label">Password</label>
+                    <input type="password" name="senha" class="form-control" id="senha" placeholder="Digite sua senha"
+                        required>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <a href="./Login.html" class="text-decoration-underline gotoLogin">Login</a>
+                </div>
+            </form>
         </div>
     </div>
 

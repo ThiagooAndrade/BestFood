@@ -36,10 +36,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $javascript;
         } else {
             echo "Credenciais inválidas. Tente novamente.";
+            $redirectToLogin = "<script type='text/javascript'>
+            setTimeout(() => {
+                window.location.href = 'http://localhost:8080/BestFood/Login.html';
+                }, 2000);
+            </script>";
+            echo $redirectToLogin;
             exit();
         }
     } else {
-        echo "Desculpe, não foi possível conectar ao banco de dados SQLite 'agenda'.";
+        echo "Desculpe, não foi possível conectar ao banco de dados.";
         exit();
     }
 }

@@ -1,18 +1,40 @@
 @import url("../../global.css");
 
-body {
+body,
+html {
+    height: 100%;
     background-color: #bb7712;
 }
 
-.login-container {
+.container {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login-card {
+.register-container {
     width: 100%;
     max-width: 400px;
+    padding: 20px;
     background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.register-title {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.btn-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gotoLogin {
+    color: #0D6EFD;
+    text-decoration: underline;
 }

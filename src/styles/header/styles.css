@@ -4,8 +4,6 @@
     font-family: Arial, sans-serif;
 }
 
-
-
 /* para o navbar nao empurrar os outros componentes */
 .navbar-header {
     background-color: var(--header-bg) !important;

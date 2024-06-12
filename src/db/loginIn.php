@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Credenciais inválidas. Tente novamente.";
             $redirectToLogin = "<script type='text/javascript'>
             setTimeout(() => {
-                window.location.href = 'http://localhost:8080/BestFood/Login.html';
+                window.location.href = 'http://localhost:8080/BestFood/login.html';
                 }, 2000);
             </script>";
             echo $redirectToLogin;
